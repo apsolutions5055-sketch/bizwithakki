@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <!-- Black background -->
-  <rect width="256" height="256" fill="#080808"/>
-  
-  <!-- Gold "A" monogram -->
-  <text x="128" y="190" font-family="'Open Sans', sans-serif" font-size="180" font-weight="800" fill="#D4AF37" text-anchor="middle" dominant-baseline="middle">A</text>
-</svg>
