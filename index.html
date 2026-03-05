@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Start Your Online Business in 2026 | Business Mentor</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<title>Start Your Online Business in 2026 | Bizgurukul Mentor</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -740,11 +740,13 @@
     transform: scale(1.02) translateY(-8px);
   }
   .featured-badge {
-    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
     background: linear-gradient(90deg, var(--gold-dark), var(--gold));
     color: var(--black); font-size: 0.65rem; font-weight: 800;
     letter-spacing: 2px; text-transform: uppercase;
-    padding: 0.3rem 0.8rem; border-radius: 20px; white-space: nowrap;
+    padding: 0.4rem 1rem; border-radius: 20px; white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   }
   .bundle-icon {
     font-size: 2.5rem; margin-bottom: 1rem; text-align: center;
@@ -859,6 +861,159 @@
     margin-bottom: 0;
   }
 
+
+  /* SPARKLY THEME - ANIMATIONS & EFFECTS */
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(212,175,55,0.3), 0 0 10px rgba(212,175,55,0.1); }
+    50% { box-shadow: 0 0 15px rgba(212,175,55,0.6), 0 0 25px rgba(212,175,55,0.3); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+  
+  /* Apply sparkle to key elements */
+  h1, h2, .section-title {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+  
+  .bundle-card {
+    animation: glow 4s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(212,175,55,0.15);
+  }
+  
+  .bundle-card.featured {
+    animation: glow 3s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(212,175,55,0.3), 0 0 60px rgba(212,175,55,0.15);
+  }
+  
+  .btn-primary, .btn-secondary, .bundle-cta.gold {
+    animation: glow 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover, .btn-secondary:hover, .bundle-cta.gold:hover {
+    animation: none;
+    box-shadow: 0 0 40px rgba(212,175,55,0.8) !important;
+    transform: scale(1.05);
+  }
+  
+  .stage-number {
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(212,175,55,0.4);
+  }
+  
+  .income-box {
+    border-color: rgba(212,175,55,0.5);
+    background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.08));
+    animation: glow 4s ease-in-out infinite;
+  }
+  
+  .bundle-bonus {
+    border-color: rgba(212,175,55,0.6);
+    background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.08));
+    animation: glow 3s ease-in-out infinite;
+  }
+  
+  .featured-badge {
+    box-shadow: 0 0 25px rgba(212,175,55,0.6);
+  }
+  
+  /* Sparkle particles effect */
+  section {
+    position: relative;
+  }
+  
+  .timeline-stage {
+    animation: glow 4s ease-in-out infinite;
+  }
+  
+  .faq-item {
+    transition: all 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    box-shadow: 0 0 20px rgba(212,175,55,0.2);
+  }
+  
+  /* Text highlights sparkle */
+  span {
+    transition: all 0.3s ease;
+  }
+  
+  h1 span {
+    color: var(--gold);
+  }
+  h2 span {
+    color: var(--gold);
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Extra sparkle on hover */
+  a:hover, button:hover {
+    filter: brightness(1.1);
+  }
+
+
+  /* SPARKLY BACKGROUND EFFECT */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #eac100, rgba(212,175,55,0)),
+      radial-gradient(2px 2px at 60px 70px, #d4af37, rgba(212,175,55,0)),
+      radial-gradient(1px 1px at 50px 50px, #ffd700, rgba(255,215,0,0)),
+      radial-gradient(1px 1px at 130px 80px, #ffd700, rgba(255,215,0,0)),
+      radial-gradient(2px 2px at 90px 10px, #eac100, rgba(212,175,55,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
+    animation: sparkle 20s linear infinite;
+  }
+  @keyframes sparkle {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(2000px);
+    }
+  }
+  body {
+    position: relative;
+  }
+  * {
+    position: relative;
+    z-index: 2;
+  }
+
+
+  h1 span {
+    color: var(--gold); font-weight: 800;
+  }
+
+
 </style>
 </head>
 <body>
@@ -893,7 +1048,7 @@
 <section class="hero">
   <div style="position:relative; z-index:1; max-width:900px;">
     <div class="hero-badge">🌍 The Smartest Online Business Ecosystem · 2026</div>
-    <h1>Start a Profitable Business in 90 Days Without Spending <span>₹3–5 Lakhs</span></h1>
+    <h1>Start a Profitable <span>Business</span> in 90 Days Without Spending <span>₹3–5 Lakhs</span></h1>
     <p>Skip the capital, paperwork, and 2-year struggle. Learn high-income digital skills and build income using a proven ecosystem.</p>
     <div class="hero-btns">
       <a href="https://www.youtube.com/watch?v=rcxA9htJXb4" target="_blank" class="btn-primary">▶ Watch Free Training (Hindi)</a>
@@ -1305,8 +1460,7 @@
             <li style="margin: 0.6rem 0;">✓ Students looking for side income</li>
             <li style="margin: 0.6rem 0;">✓ Job holders earning ₹15k–₹30k/month who want to build something of their own</li>
             <li style="margin: 0.6rem 0;">✓ Aspiring entrepreneurs who don't want to risk lakhs on a traditional business</li>
-            <li style="margin: 0.6rem 0;">✓ Housewives</li>
-            <li style="margin: 0.6rem 0;">✓ Freelancers</li>
+            <li style="margin: 0.6rem 0;">✓ Housewives and freelancers</li>
             <li style="margin: 0.6rem 0;">✓ Anyone serious about building an online income in 2026</li>
           </ul>
         </div>
@@ -1331,8 +1485,8 @@
   <h2>Why Spend <span>₹3–5 Lakhs & 2–3 Years</span> of Your Time?<br>When You Can Start TODAY With Just <span>₹5k–₹15k</span> & Build Real Income in Just <span>30–90 Days?</span></h2>
   <p>The choice is straightforward. One path is expensive, slow, and uncertain. The other is affordable, guided, and already working for thousands across the world.</p>
   <div class="final-btns">
-    <a href="https://www.youtube.com/watch?v=NrJ0bjUa3Zw" target="_blank" class="btn-primary">▶ Watch the Video</a>
     <a href="https://wa.me/917666791220?text=I%20watched%20the%20video%2C%20I%20need%20to%20book%20a%20clarity%20call" target="_blank" class="btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" style="vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Book on WhatsApp</a>
+    <a href="https://www.youtube.com/watch?v=NrJ0bjUa3Zw" target="_blank" class="btn-primary">▶ Watch the Video</a>
   </div>
 </section>
 
