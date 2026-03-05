@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Start Your Online Business in 2026 | Business Mentor</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<title>Start Your Online Business in 2026 | Bizgurukul Mentor</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -106,7 +106,7 @@
   .hero h1 {
     font-family: 'Open Sans', sans-serif; font-weight: 800;
     font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-    line-height: 1.2; color: var(--white); margin-bottom: 1.5rem;
+    line-height: 1.2; color: var(--white); margin-bottom: 1rem;
     animation: fadeInUp 0.8s ease 0.2s both;
     letter-spacing: 0px;
   }
@@ -177,7 +177,7 @@
   }
   .reality-column h3 {
     font-family: 'Open Sans', sans-serif; font-weight: 800;
-    font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--white);
+    font-size: 1.4rem; margin-bottom: 1rem; color: var(--white);
     display: flex; align-items: center; gap: 0.75rem;
   }
   .reality-icon { font-size: 1.8rem; }
@@ -255,7 +255,7 @@
   .pain-card.good { border-color: rgba(212,175,55,0.4); }
   .pain-card h3 {
     font-family: 'Open Sans', sans-serif; font-size: 1.3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
   .pain-card.bad h3 { color: #e07070; }
   .pain-card.good h3 { color: var(--gold); }
@@ -264,7 +264,6 @@
     margin-bottom: 0.9rem; font-size: 0.95rem; color: #ccc;
   }
   .pain-item .icon { font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
-
 
   .thumb-link { position: relative; display: block; cursor: pointer; }
   .play-overlay {
@@ -350,36 +349,12 @@
     margin-top: 3rem; align-items: start;
   }
   @media(max-width:900px){ .bundles-grid { grid-template-columns: 1fr; } }
-  .bundle-card {
+  \.bundle-card {
     background: var(--dark2); border-radius: 8px; padding: 2rem;
     border: 1px solid #2a2a2a; position: relative;
     transition: transform 0.3s;
   }
-  .bundle-card:hover { transform: translateY(-5px); }
-  .bundle-card.featured {
-    border: 2px solid var(--gold);
-    background: linear-gradient(160deg, #1a1500 0%, var(--dark2) 100%);
-    transform: scale(1.03);
-  }
-  .bundle-card.featured:hover { transform: scale(1.03) translateY(-5px); }
-  .featured-badge {
-    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
-    color: var(--black); font-size: 0.7rem; font-weight: 700;
-    letter-spacing: 2px; text-transform: uppercase;
-    padding: 0.35rem 1rem; border-radius: 20px; white-space: nowrap;
-  }
-  .bundle-icon { font-size: 2rem; margin-bottom: 1rem; }
-  .bundle-card h3 {
-    font-family: 'Open Sans', sans-serif; font-size: 1.5rem;
-    margin-bottom: 0.5rem; font-weight: 400; letter-spacing: 0.5px;
-  }
-  .bundle-card.featured h3 { color: var(--gold); }
-  .bundle-for {
-    font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;
-    letter-spacing: 1px; text-transform: uppercase;
-  }
-  .bundle-features { list-style: none; margin-bottom: 2rem; }
+
   .bundle-features li {
     padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
     font-size: 0.9rem; color: #ccc; display: flex; align-items: center; gap: 0.5rem;
@@ -387,7 +362,8 @@
   .bundle-features li::before { content: '✦'; color: var(--gold); font-size: 0.6rem; }
   .bundle-bonus {
     background: rgba(212,175,55,0.08); border: 1px dashed rgba(212,175,55,0.35);
-    border-radius: 6px; padding: 0.9rem 1rem; margin-bottom: 1.5rem;
+    border-radius: 6px; padding: 0.9rem 1rem; margin-bottom: 1rem;
+    display: inline-block; vertical-align: top; width: auto; margin-right: 1.5rem;
   }
   .bonus-label {
     font-size: 0.75rem; font-weight: 700; color: var(--gold);
@@ -410,9 +386,9 @@
     color: var(--gold); font-weight: 700; margin-bottom: 0.25rem;
   }
   .bundle-price-copy {
-    font-size: 0.85rem; color: #aaa; margin-bottom: 1.5rem; line-height: 1.5;
+    font-size: 0.85rem; color: #aaa; margin-bottom: 1rem; line-height: 1.5;
   }
-  .bundle-price-note { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .bundle-price-note { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem; }
   
   /* INCOME BOX - NEW PREMIUM STYLING */
   .income-box {
@@ -420,7 +396,7 @@
     border: 1px solid rgba(212,175,55,0.35);
     border-radius: 8px;
     padding: 14px 16px;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1rem;
     font-size: 0.9rem;
     line-height: 1.6;
     color: #ddd;
@@ -452,7 +428,7 @@
   }
   
   .bundle-cta {
-    display: block; text-align: center; padding: 0.9rem;
+    display: inline-block; text-align: center; padding: 0.9rem;
     border-radius: 4px; font-weight: 700; text-decoration: none;
     transition: all 0.3s; font-size: 0.95rem;
   }
@@ -468,12 +444,6 @@
   .bundle-cta.outline:hover { background: rgba(212,175,55,0.1); }
   .compliance-note { text-align: center; color: var(--text-muted); font-size: 0.78rem; margin-top: 2rem; font-style: italic; }
 
-  /* COMPARISON TABLE */
-  .compare-section { background: var(--dark); overflow-x: auto; }
-  .compare-table {
-    width: 100%; border-collapse: collapse; margin-top: 3rem;
-    background: var(--dark2); border-radius: 8px; overflow: hidden;
-  }
   .compare-table th {
     padding: 1.25rem 1.5rem; text-align: center;
     font-family: 'Open Sans', sans-serif; font-size: 1rem;
@@ -588,6 +558,307 @@
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* TIMELINE SECTION */
+  .timeline-section { background: var(--dark); }
+  .timeline-container {
+    display: grid; grid-template-columns: 1fr; gap: 3rem; margin-top: 3rem;
+  }
+  .timeline-stage {
+    position: relative; padding-left: 60px; margin-bottom: 2rem;
+  }
+  .timeline-stage::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: linear-gradient(180deg, var(--gold), rgba(212,175,55,0.3));
+  }
+  .stage-number {
+    position: absolute; left: -15px; top: 0;
+    background: var(--gold); color: var(--black);
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; font-weight: 800; font-size: 1.2rem;
+  }
+  .stage-header {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+  }
+  .stage-header h3 {
+    font-family: 'Open Sans', sans-serif; font-size: 1.4rem;
+    font-weight: 700; color: var(--white); margin: 0;
+  }
+  .stage-badge {
+    background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4);
+    color: var(--gold); font-size: 0.75rem; padding: 0.4rem 0.8rem;
+    border-radius: 20px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .stage-content {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .stage-box {
+    background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(212,175,55,0.02) 100%);
+    border: 1px solid rgba(212,175,55,0.2); border-radius: 8px;
+    padding: 1.5rem; backdrop-filter: blur(10px);
+  }
+  .stage-box h4 {
+    font-size: 1rem; font-weight: 700; color: var(--gold);
+    margin-bottom: 1rem; margin-top: 0;
+  }
+  .stage-box.earnings {
+    border-left: 4px solid #4caf50;
+  }
+  .stage-box.emotion {
+    border-left: 4px solid #ff9800;
+  }
+  .stage-box.example {
+    border-left: 4px solid #2196f3;
+  }
+  .big-number {
+    font-size: 2rem; font-weight: 800; color: #4caf50;
+    margin: 0; font-family: 'Open Sans', sans-serif;
+  }
+  .small-text {
+    font-size: 0.85rem; color: var(--text-muted); margin: 0.5rem 0 0 0;
+  }
+  .emotion-text {
+    color: var(--gold); font-style: italic; margin-top: 0.5rem;
+  }
+  .stage-list {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .stage-list li {
+    padding: 0.5rem 0; color: #ccc; font-size: 0.95rem;
+    display: flex; gap: 0.5rem; align-items: flex-start;
+  }
+  .stage-list li::before {
+    content: '→'; color: var(--gold); font-weight: 700; min-width: 15px;
+  }
+  .stage-box p {
+    margin: 0.75rem 0 0 0; color: #bbb; line-height: 1.6; font-size: 0.95rem;
+  }
+  .stage-box p strong {
+    color: var(--white);
+  }
+  .timeline-bottom {
+    margin-top: 3rem; padding: 2rem;
+    background: linear-gradient(135deg, rgba(76,175,80,0.1) 0%, rgba(212,175,55,0.05) 100%);
+    border: 1px solid rgba(212,175,55,0.2); border-radius: 8px;
+    text-align: center;
+  }
+  .timeline-bottom h3 {
+    font-size: 1.3rem; color: var(--white); margin-top: 0;
+  }
+  .timeline-bottom p {
+    color: #bbb; margin: 0.75rem 0;
+  }
+  @media(max-width:768px) {
+    .timeline-stage { padding-left: 40px; }
+    .stage-number { left: -10px; width: 35px; height: 35px; font-size: 1rem; }
+    .stage-header { flex-direction: column; align-items: flex-start; }
+    .stage-content { grid-template-columns: 1fr; }
+  }
+
+
+  .stage-simple {
+    background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(212,175,55,0.02) 100%);
+    border: 1px solid rgba(212,175,55,0.2); border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .stage-simple p {
+    color: #ccc; font-size: 0.95rem; margin: 0.5rem 0;
+    line-height: 1.6; display: flex; gap: 0.5rem;
+  }
+  .stage-simple p:first-child {
+    margin-top: 0;
+  }
+
+
+  /* BUNDLE CARD INLINE LAYOUT */
+  .bundle-card-content {
+    display: grid; grid-template-columns: 1fr auto auto; gap: 1.5rem;
+    align-items: flex-start; margin-bottom: 1rem;
+  }
+  .bundle-card-features {
+    grid-column: 1;
+  }
+  .bundle-card-bonus {
+    grid-column: 2;
+    flex-shrink: 0;
+  }
+  .bundle-card-button {
+    grid-column: 3;
+    display: flex; align-items: flex-end;
+  }
+  .bundle-card-button .bundle-cta {
+    height: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  @media(max-width:1024px) {
+    .bundle-card-content {
+      grid-template-columns: 1fr auto;
+    }
+    .bundle-card-bonus {
+      grid-column: 1 / 3;
+    }
+    .bundle-card-button {
+      grid-column: 1 / 3;
+    }
+  }
+  @media(max-width:768px) {
+    .bundle-card-content {
+      grid-template-columns: 1fr;
+    }
+    .bundle-card-bonus,
+    .bundle-card-button {
+      grid-column: 1;
+    }
+  }
+
+
+  /* COMPACT EQUAL-SIZE BUNDLE CARDS */
+  .bundles-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem; margin-top: 3rem;
+  }
+  .bundle-card {
+    background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(212,175,55,0.02) 100%);
+    border: 2px solid rgba(212,175,55,0.25); border-radius: 12px;
+    padding: 2rem; position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; flex-direction: column; height: 100%;
+  }
+  .bundle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(212,175,55,0.2);
+  }
+  .bundle-card.featured {
+    border: 3px solid var(--gold);
+    background: linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(212,175,55,0.05) 100%);
+    transform: scale(1.02);
+  }
+  .bundle-card.featured:hover {
+    transform: scale(1.02) translateY(-8px);
+  }
+  .featured-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+    color: var(--black); font-size: 0.65rem; font-weight: 800;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 0.3rem 0.8rem; border-radius: 20px; white-space: nowrap;
+  }
+  .bundle-icon {
+    font-size: 2.5rem; margin-bottom: 1rem; text-align: center;
+  }
+  .bundle-card h3 {
+    font-family: 'Open Sans', sans-serif; font-size: 1.3rem;
+    margin: 0 0 0.3rem 0; font-weight: 700; color: var(--white);
+    text-align: center;
+  }
+  .bundle-card.featured h3 {
+    color: var(--gold);
+  }
+  .bundle-for {
+    font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.2rem;
+    letter-spacing: 1px; text-transform: uppercase; text-align: center;
+  }
+  .bundle-price-old {
+    font-family: 'Open Sans', sans-serif; font-size: 0.9rem;
+    color: var(--text-muted); text-decoration: line-through;
+    margin-bottom: 0.3rem; text-align: center;
+  }
+  .bundle-price-new {
+    font-family: 'Open Sans', sans-serif; font-size: 1.8rem;
+    color: var(--gold); font-weight: 800; margin-bottom: 1.2rem;
+    text-align: center;
+  }
+  .income-box {
+    background: linear-gradient(135deg, rgba(76,175,80,0.15), rgba(76,175,80,0.05));
+    border: 1px solid rgba(76,175,80,0.35);
+    border-radius: 8px; padding: 0.9rem; margin-bottom: 1.2rem;
+    font-size: 0.85rem; line-height: 1.5; color: #ddd;
+  }
+  .income-box strong {
+    color: #4caf50; font-weight: 700; display: block;
+    margin-bottom: 0.2rem; font-size: 0.8rem;
+  }
+  .income-box-line {
+    margin-bottom: 0.6rem; font-size: 0.85rem;
+  }
+  .income-box-line:last-of-type {
+    margin-bottom: 0;
+  }
+  .income-box-compliance {
+    font-size: 0.7rem; color: var(--text-muted);
+    margin-top: 0.6rem; padding-top: 0.6rem;
+    border-top: 1px solid rgba(212,175,55,0.2);
+    font-style: italic;
+  }
+  .bundle-features {
+    list-style: none; padding: 0; margin: 0 0 0.8rem 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    flex: 1;
+  }
+  .bundle-features li {
+    padding: 0.3rem 0.6rem; color: #bbb; font-size: 0.85rem;
+    display: inline-flex; gap: 0.4rem; align-items: center;
+    white-space: nowrap;
+  }
+  .bundle-features li::before {
+    content: '✦'; color: var(--gold); font-size: 0.5rem;
+    font-weight: 700; min-width: 12px;
+  }
+  .bundle-bonus {
+    background: rgba(212,175,55,0.1); border: 1px dashed rgba(212,175,55,0.4);
+    border-radius: 6px; padding: 0.8rem; margin-bottom: 1.2rem;
+    text-align: center;
+  }
+  .bonus-label {
+    font-size: 0.7rem; font-weight: 700; color: var(--gold);
+    letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 0.3rem;
+  }
+  .bonus-item {
+    font-size: 0.8rem; color: #bbb; padding: 0.15rem 0;
+  }
+  .bundle-cta {
+    display: block; text-align: center; padding: 0.85rem;
+    border-radius: 6px; font-weight: 700; text-decoration: none;
+    transition: all 0.3s; font-size: 0.95rem;
+    margin-top: auto;
+  }
+  .bundle-cta.gold {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: var(--black);
+  }
+  .bundle-cta.gold:hover {
+    box-shadow: 0 6px 20px rgba(212,175,55,0.4);
+  }
+  .bundle-cta.outline {
+    border: 2px solid var(--gold); color: var(--gold);
+    background: transparent;
+  }
+  .bundle-cta.outline:hover {
+    background: rgba(212,175,55,0.1);
+  }
+  @media(max-width:768px) {
+    .bundles-grid {
+      grid-template-columns: 1fr;
+    }
+    .bundle-card.featured {
+      transform: scale(1);
+    }
+  }
+
+
+  .faq-a p {
+    margin: 0.8rem 0; line-height: 1.7; color: #bbb;
+  }
+  .faq-a p:first-child {
+    margin-top: 0;
+  }
+  .faq-a p:last-child {
+    margin-bottom: 0;
+  }
+
 </style>
 </head>
 <body>
@@ -622,7 +893,7 @@
 <section class="hero">
   <div style="position:relative; z-index:1; max-width:900px;">
     <div class="hero-badge">🌍 The Smartest Online Business Ecosystem · 2026</div>
-    <h1>Start Your Online Business in 2026 Without Spending <span>₹3–5 Lakhs</span></h1>
+    <h1>Start a Profitable Business in 90 Days Without Spending <span>₹3–5 Lakhs</span></h1>
     <p>Skip the capital, paperwork, and 2-year struggle. Learn high-income digital skills and build income using a proven ecosystem.</p>
     <div class="hero-btns">
       <a href="https://www.youtube.com/watch?v=rcxA9htJXb4" target="_blank" class="btn-primary">▶ Watch Free Training (Hindi)</a>
@@ -681,10 +952,12 @@
       </div>
       <div class="mentor-content">
         <div class="section-label" style="text-align:left;">Meet Your Mentor</div>
-        <h2 class="mentor-title">I'm on a Mission to Help <span>1 Lakh+ People</span> Achieve Financial Freedom.</h2>
-        <p>Most people are stuck in the same loop — wake up, work a job they don't love, pay bills, repeat. I know that feeling because I lived it. That's why I made it my life's work to change this story for as many people as possible.</p>
-        <p style="margin-top:1rem;">As an entrepreneur and business mentor, I've helped hundreds of people across the world start their own online businesses — <strong>without heavy investment, without prior experience, and without risking their savings.</strong> My mission doesn't stop until 1 Lakh+ people have unlocked their financial freedom and built a life where work is a choice, not a compulsion.</p>
-        <p style="margin-top:1rem; color: var(--gold); font-style: italic;">"You don't need a perfect background. You need the right guidance, the right skills, and the courage to begin."</p>
+        <h2 class="mentor-title">How I Went From Working a Rs 8,000 Job to Making 6 Figures in 2 Years</h2>
+        <p><strong>At 24, I was struggling.</strong> Earning just ₹8,000 a month working 12-hour shifts at an MNC. Living in a tiny PG room. Frustrated. No mentor. No guidance. No clear path forward.</p>
+        <p style="margin-top:1rem;">I spent <strong>2 YEARS figuring it out alone</strong>—making mistakes, learning the hard way, wasting time and money. But eventually, I built a system that worked. I earned <strong>₹7 Lakhs in that year</strong>: ₹5 Lakhs from real clients and ₹2 Lakhs from affiliate marketing. <strong>Now, I'm consistently making ₹1 Lakh per month</strong> using the exact same system—and it keeps growing.</p>
+        <p style="margin-top:1rem; color: var(--gold); font-style: italic;">That's when it hit me: <strong>I don't want others to struggle for 2 years like I did.</strong></p>
+        <p style="margin-top:1rem;">So I built this program to compress my 2-year journey into 90 days. Everything I learned—the skills, the systems, the strategies, the mindset shifts—it's all here. <strong>You can start for just ₹5,000–₹15,000</strong> and avoid the 40-year trap.</p>
+        <p style="margin-top:1rem; color: var(--gold); font-style: italic; font-weight: 600;">This is a proven roadmap. I've walked it. 500+ students have walked it. Now it's your turn.</p>
         <div style="margin-top:2rem;">
           <a href="https://wa.me/917666791220?text=I%20watched%20the%20video%2C%20I%20need%20to%20book%20a%20clarity%20call" target="_blank" class="btn-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" style="vertical-align:middle;margin-right:6px"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Talk to Me on WhatsApp</a>
         </div>
@@ -756,6 +1029,88 @@
   </div>
 </section>
 
+<!-- STUDENT JOURNEY TIMELINE -->
+<section class="timeline-section" id="student-journey">
+  <div class="container reveal">
+    <div class="section-label">Real Transformation</div>
+    <h2 class="section-title">Your 90-Day Roadmap: How I Built Real Income</h2>
+    <p class="section-sub">A simple 4-step roadmap. 90 days. Real results.</p>
+
+    <div class="timeline-container">
+
+      <!-- STEP 1: ENROLL & TRAIN -->
+      <div class="timeline-stage">
+        <div class="stage-number">1</div>
+        <div class="stage-header">
+          <h3>STEP 1: You Complete Training & Get Certified</h3>
+          <span class="stage-badge">WEEK 1-2</span>
+        </div>
+        <div class="stage-simple">
+          <p>✓ You enroll → Get lifetime access to all modules, templates, and tools</p>
+          <p>✓ You complete foundational training (Facebook Ads, Affiliate Marketing, Lead Gen)</p>
+          <p>✓ You get your certification + join our private community of 500+ students</p>
+          <p>✓ You're now ready to earn your first income</p>
+        </div>
+      </div>
+
+      <!-- STEP 2: FIRST INCOME -->
+      <div class="timeline-stage">
+        <div class="stage-number">2</div>
+        <div class="stage-header">
+          <h3>STEP 2: Your First ₹2k-₹10k (Affiliate Income)</h3>
+          <span class="stage-badge">WEEK 2-3</span>
+        </div>
+        <div class="stage-simple">
+          <p>✓ You share affiliate links with your network (no previous clients needed)</p>
+          <p>✓ You earn commissions from 10-15 sales</p>
+          <p>✓ You realize: "I can actually make money outside my job"</p>
+          <p>✓ Confidence level: 📈 (you've earned real money)</p>
+        </div>
+      </div>
+
+      <!-- STEP 3: FIRST CLIENT -->
+      <div class="timeline-stage">
+        <div class="stage-number">3</div>
+        <div class="stage-header">
+          <h3>STEP 3: Your First Paying Client (₹5k-₹20k/month)</h3>
+          <span class="stage-badge">WEEK 3-8</span>
+        </div>
+        <div class="stage-simple">
+          <p>✓ You land a local business client (beauty salon, coaching center, e-commerce)</p>
+          <p>✓ You manage their Facebook Ads or social media</p>
+          <p>✓ You deliver real results (leads, sales, visibility)</p>
+          <p>✓ They pay you ₹5,000-₹15,000/month for your service</p>
+        </div>
+      </div>
+
+      <!-- STEP 4: SCALE & MULTIPLY -->
+      <div class="timeline-stage">
+        <div class="stage-number">4</div>
+        <div class="stage-header">
+          <h3>STEP 4: Scale to 3-4 Clients (₹30k-₹50k/month)</h3>
+          <span class="stage-badge">WEEK 8-12</span>
+        </div>
+        <div class="stage-simple">
+          <p>✓ You land 2-3 more clients using the same process</p>
+          <p>✓ You're now managing multiple clients + affiliate income</p>
+          <p>✓ Your monthly income: ₹30,000-₹50,000+</p>
+          <p>✓ You've officially built a real income source (3 months to success)</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="timeline-bottom">
+      <h3>That's It. Simple.</h3>
+      <p>90 days. 4 steps. From zero to ₹30k-₹50k/month.</p>
+      <p style="margin-top:1rem; color: var(--gold); font-weight: 600;">This is the roadmap. Your execution determines your results.</p>
+    </div>
+
+
+  </div>
+</section>
+
+
 <!-- HOW IT WORKS -->
 <section class="steps-section" id="how-it-works">
   <div class="container reveal">
@@ -814,6 +1169,10 @@
           <li>Lead Generation Fundamentals</li>
           <li>Community Access</li>
         </ul>
+        <div class="bundle-bonus">
+          <div class="bonus-label">🎁 Includes FREE</div>
+          <div class="bonus-item">✦ Marketing Mastery Bundle</div>
+        </div>
         <a href="https://www.bizgurukul.com/Signup.aspx?id=lPC2QdX4/P0=&ref=XWGclVbbhRNxtwMnsNUehA==&user_id=tW0XYtwgnDI=&lid=12GSCisZ6mIZS+blWy07rVxtZbaYiQkC" target="_blank" class="bundle-cta outline">Enroll Now</a>
       </div>
 
@@ -889,38 +1248,6 @@
   </div>
 </section>
 
-<!-- COMPARISON TABLE -->
-<section class="compare-section">
-  <div class="container reveal">
-    <div class="section-label">Side by Side</div>
-    <h2 class="section-title">Traditional Business vs This Ecosystem</h2>
-    <p class="section-sub">Let the numbers speak for themselves.</p>
-    <div style="overflow-x:auto;">
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Criteria</th>
-          <th>🏢 Traditional Business</th>
-          <th>🚀 Akshay's Business System</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Startup Cost</td><td>₹3–5 Lakhs+</td><td>₹5,000–₹15,000</td></tr>
-        <tr><td>Setup Time</td><td>1–2 Years</td><td>1–2 Days</td></tr>
-        <tr><td>Product Creation</td><td>Build from scratch (₹1–2 Lakh)</td><td>Ready-made, included</td></tr>
-        <tr><td>Risk Level</td><td>High — No guarantee</td><td>Low — Proven model</td></tr>
-        <tr><td>Work Location</td><td>Fixed — office or shop</td><td>Anywhere — phone or laptop</td></tr>
-        <tr><td>Mentorship</td><td>None included</td><td>1-on-1 + live webinars</td></tr>
-        <tr><td>Learning Curve</td><td>Steep — figure it out alone</td><td>Guided — step by step</td></tr>
-        <tr><td>Earning Potential</td><td>Limited by time & location</td><td>Scalable — digital leverage</td></tr>
-        <tr><td>Skill Development</td><td>Not included</td><td>26+ high-income skills</td></tr>
-        <tr><td>Time to First Income</td><td>1–2 Years (or never)</td><td>30–90 Days (effort-dependent)</td></tr>
-      </tbody>
-    </table>
-    </div>
-  </div>
-</section>
-
 <!-- TRUST -->
 <section class="trust-section">
   <div class="container reveal">
@@ -972,7 +1299,26 @@
 
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Who is this best suited for? <span class="arrow">+</span></div>
-        <div class="faq-a">This is ideal for students looking for side income, job holders earning ₹15k–₹30k/month who want to build something of their own, aspiring entrepreneurs who don't want to risk lakhs on a traditional business, housewives, freelancers, and anyone serious about building an online income in 2026.</div>
+        <div class="faq-a">
+          <p>This is perfect for:</p>
+          <ul style="margin: 1rem 0; padding-left: 1.5rem; list-style: none;">
+            <li style="margin: 0.6rem 0;">✓ Students looking for side income</li>
+            <li style="margin: 0.6rem 0;">✓ Job holders earning ₹15k–₹30k/month who want to build something of their own</li>
+            <li style="margin: 0.6rem 0;">✓ Aspiring entrepreneurs who don't want to risk lakhs on a traditional business</li>
+            <li style="margin: 0.6rem 0;">✓ Housewives</li>
+            <li style="margin: 0.6rem 0;">✓ Freelancers</li>
+            <li style="margin: 0.6rem 0;">✓ Anyone serious about building an online income in 2026</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is this MLM (Multi-Level Marketing)? <span class="arrow">+</span></div>
+        <div class="faq-a">
+          <p><strong>No. This is NOT MLM.</strong> MLM forces you to recruit people to make money. That's not how this works.</p>
+          <p><strong>Here, you earn money in 2 simple ways:</strong> (1) Sell your services to real clients (like managing their Facebook ads or social media), (2) Share affiliate products and earn commission when people buy. No one is forcing you to recruit anyone.</p>
+          <p><strong>The key difference:</strong> Your money comes from real customers and real sales—not from recruiting people under you. This is 100% legitimate and legal in every country.</p>
+        </div>
       </div>
 
     </div>
