@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Start Your Online Business in 2026 | Business Mentor</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<title>Start Your Online Business in 2026 | Bizgurukul Mentor</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1014,6 +1014,68 @@
   }
 
 
+
+  /* TESTIMONIALS SECTION */
+  .testimonials-section { background: var(--dark); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem; margin-top: 3rem;
+  }
+  .testimonial-card {
+    background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(212,175,55,0.02) 100%);
+    border: 1px solid rgba(212,175,55,0.25); border-radius: 12px;
+    padding: 2rem; position: relative; transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(212,175,55,0.15);
+  }
+  .testimonial-header {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+  }
+  .testimonial-avatar {
+    width: 50px; height: 50px;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: var(--black); font-weight: 800; font-size: 1.5rem;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .testimonial-info {
+    flex: 1;
+  }
+  .testimonial-info h4 {
+    margin: 0 0 0.2rem 0; color: var(--white); font-size: 1.1rem;
+    font-family: 'Open Sans', sans-serif; font-weight: 700;
+  }
+  .testimonial-role {
+    margin: 0; color: var(--gold); font-size: 0.85rem; font-weight: 600;
+  }
+  .testimonial-stars {
+    font-size: 1rem; white-space: nowrap;
+  }
+  .testimonial-quote {
+    color: #ccc; font-size: 0.95rem; line-height: 1.7;
+    margin-bottom: 1.5rem; font-style: italic;
+  }
+  .testimonial-meta {
+    color: var(--gold); font-size: 0.85rem; font-weight: 600;
+    padding-top: 1.5rem; border-top: 1px solid rgba(212,175,55,0.2);
+  }
+  @media(max-width:768px) {
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonial-header { flex-wrap: wrap; }
+    .testimonial-stars { width: 100%; margin-top: 0.5rem; }
+  }
+
+
+  .bundle-cta.sold-out {
+    background: #555 !important; color: var(--white) !important;
+    border: none !important; cursor: pointer;
+  }
+  .bundle-cta.sold-out:hover {
+    background: #666 !important; box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
+  }
+
 </style>
 </head>
 <body>
@@ -1266,6 +1328,68 @@
 </section>
 
 
+<!-- TESTIMONIALS SECTION -->
+<section class="testimonials-section">
+  <div class="container reveal">
+    <div class="section-label">Real Success Stories</div>
+    <h2 class="section-title">What Our Students Are Achieving</h2>
+    <p class="section-sub">Real people, real results, real income. Here's what happened when they started their journey.</p>
+
+    <div class="testimonials-grid">
+
+      <!-- TESTIMONIAL 1: SHUBHAM (Student) -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">S</div>
+          <div class="testimonial-info">
+            <h4>Shubham</h4>
+            <p class="testimonial-role">Student</p>
+          </div>
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        </div>
+        <div class="testimonial-quote">
+          "I started my journey with zero experience. Within just 2 months of joining, I earned enough to pay my entire college fees. I couldn't believe it was possible. This program literally changed my life and took away the financial stress from my family."
+        </div>
+        <div class="testimonial-meta">Paid college fees in 2 months</div>
+      </div>
+
+      <!-- TESTIMONIAL 2: NIKITA (Housewife) -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">N</div>
+          <div class="testimonial-info">
+            <h4>Nikita</h4>
+            <p class="testimonial-role">Housewife</p>
+          </div>
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        </div>
+        <div class="testimonial-quote">
+          "I was at home with no income, completely dependent on my husband. Within 30 days, I made my first income. Now I can finally support my kids from home and feel independent. It's been a game-changer for my confidence and our family."
+        </div>
+        <div class="testimonial-meta">First income in 30 days</div>
+      </div>
+
+      <!-- TESTIMONIAL 3: ADITYA (Job Holder) -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">A</div>
+          <div class="testimonial-info">
+            <h4>Aditya</h4>
+            <p class="testimonial-role">Job Holder</p>
+          </div>
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        </div>
+        <div class="testimonial-quote">
+          "I was working a full-time job and thought I wouldn't have time for this. But I started anyway. Within just 10 days, I made my first income without even quitting my job. Now I have 2 sources of income and the freedom I always wanted."
+        </div>
+        <div class="testimonial-meta">Second income source in 10 days</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- HOW IT WORKS -->
 <section class="steps-section" id="how-it-works">
   <div class="container reveal">
@@ -1305,8 +1429,6 @@
         <div class="bundle-icon">🥉</div>
         <h3>Traffic Mastery</h3>
         <div class="bundle-for">Entry Level · Start Here</div>
-        <div class="bundle-price-old">₹8,999</div>
-        <div class="bundle-price-new">₹5,999</div>
         
         <!-- INCOME BOX -->
         <div class="income-box">
@@ -1328,7 +1450,7 @@
           <div class="bonus-label">🎁 Includes FREE</div>
           <div class="bonus-item">✦ Marketing Mastery Bundle</div>
         </div>
-        <a href="https://www.bizgurukul.com/Signup.aspx?id=lPC2QdX4/P0=&ref=XWGclVbbhRNxtwMnsNUehA==&user_id=tW0XYtwgnDI=&lid=12GSCisZ6mIZS+blWy07rVxtZbaYiQkC" target="_blank" class="bundle-cta outline">Enroll Now</a>
+        <a href="https://wa.me/917666791220?text=I%20want%20to%20check%20if%20I%20can%20get%20a%20seat%20reserved%20for%20me" target="_blank" class="bundle-cta sold-out">SOLD OUT</a>
       </div>
 
       <!-- CARD 2: Finance Mastery - MAIN FEATURED -->
@@ -1337,8 +1459,6 @@
         <div class="bundle-icon">🥇</div>
         <h3>Finance Mastery</h3>
         <div class="bundle-for">Complete Business Starter Package</div>
-        <div class="bundle-price-old">₹19,999</div>
-        <div class="bundle-price-new">₹14,999</div>
         
         <!-- INCOME BOX -->
         <div class="income-box">
@@ -1364,7 +1484,7 @@
           <div class="bonus-item">✦ Traffic Mastery Bundle</div>
           <div class="bonus-item">✦ Influence Mastery Bundle</div>
         </div>
-        <a href="https://www.bizgurukul.com/Signup.aspx?id=KRl5o+bvMnw=&ref=XWGclVbbhRNxtwMnsNUehA==&user_id=tW0XYtwgnDI=&lid=12GSCisZ6mKxEb2DkD/5FvrrPX+00I/P" target="_blank" class="bundle-cta gold">Enroll Now</a>
+        <a href="https://wa.me/917666791220?text=I%20want%20to%20check%20if%20I%20can%20get%20a%20seat%20reserved%20for%20me" target="_blank" class="bundle-cta sold-out">SOLD OUT</a>
       </div>
 
       <!-- CARD 3: Influence Mastery - 2nd Tier -->
@@ -1372,8 +1492,6 @@
         <div class="bundle-icon">🥈</div>
         <h3>Influence Mastery</h3>
         <div class="bundle-for">Advanced · Brand & Authority</div>
-        <div class="bundle-price-old">₹15,999</div>
-        <div class="bundle-price-new">₹10,999</div>
         
         <!-- INCOME BOX -->
         <div class="income-box">
@@ -1395,7 +1513,7 @@
           <div class="bonus-label">🎁 Includes FREE</div>
           <div class="bonus-item">✦ Traffic Mastery Bundle</div>
         </div>
-        <a href="https://www.bizgurukul.com/Signup.aspx?id=aBdsUosgN7I=&ref=XWGclVbbhRNxtwMnsNUehA==&user_id=tW0XYtwgnDI=&lid=12GSCisZ6mL9QZU8WRr7J9xHziKkX2B8" target="_blank" class="bundle-cta outline">Enroll Now</a>
+        <a href="https://wa.me/917666791220?text=I%20want%20to%20check%20if%20I%20can%20get%20a%20seat%20reserved%20for%20me" target="_blank" class="bundle-cta sold-out">SOLD OUT</a>
       </div>
 
     </div>
