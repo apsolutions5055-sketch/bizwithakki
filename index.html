@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akshay Potnis | Business Mentor — Earn ₹50k–₹1 Lakh in 90 Days</title>
-  <link rel="icon" type="image/png" href="favicon.png">
   <meta name="description" content="500+ students went from zero income to ₹50k–₹1 Lakh/month in 90 days. Akshay Potnis teaches real high-income skills with real results.">
 
   <!-- ===== OPEN GRAPH / SOCIAL PREVIEW ===== -->
@@ -951,6 +950,36 @@
       font-size: 0.73rem;
       color: #555;
       font-style: italic;
+    }
+
+    /* Live viewers strip */
+    .live-viewers {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0 0 1.25rem;
+      padding: 0.6rem 1rem;
+      background: rgba(37,211,102,0.06);
+      border: 1px solid rgba(37,211,102,0.15);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: #aaa;
+    }
+
+    .live-dot {
+      width: 7px; height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 6px rgba(34,197,94,0.8);
+      animation: pulse-dot 1.8s ease-in-out infinite;
+    }
+
+    .live-viewers strong {
+      color: var(--green);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.92rem;
     }
 
     .cta-pair {
@@ -2593,6 +2622,11 @@
       </div>
 
       <div class="cta-pair">
+        <!-- Live viewers -->
+        <div class="live-viewers">
+          <span class="live-dot"></span>
+          <span><strong id="liveCount">19</strong> people are viewing this page right now</span>
+        </div>
         <a href="https://wa.me/917666791220?text=Hi!%20I%20want%20to%20apply%20for%20the%20next%20Finance%20Mastery%20batch." target="_blank" class="bundle-cta-gold">🚀 Apply for Next Batch →</a>
         <a href="https://www.instagram.com/biz.testimonies?igsh=aTZ3dGp4bHRoYTI0" target="_blank" class="bundle-cta-outline">▶ Watch Student Results First</a>
       </div>
@@ -2815,7 +2849,24 @@
 
   calcROI();
 
-  // ===== COUNTDOWN (persists across page loads) =====
+  // ===== LIVE VIEWER COUNT =====
+  (function() {
+    const el = document.getElementById('liveCount');
+    if (!el) return;
+    const MIN = 14, MAX = 27;
+    let current = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
+    el.textContent = current;
+
+    function nudge() {
+      // Randomly go up or down by 1, stay within range
+      const direction = Math.random() < 0.5 ? 1 : -1;
+      current = Math.min(MAX, Math.max(MIN, current + direction));
+      el.textContent = current;
+      // Next change in 4–12 seconds — irregular feels real
+      setTimeout(nudge, 4000 + Math.random() * 8000);
+    }
+    setTimeout(nudge, 5000 + Math.random() * 5000);
+  })();
   (function() {
     const KEY = 'cd_end';
     const DURATION = 24 * 60 * 60 * 1000; // 24 hours in ms
