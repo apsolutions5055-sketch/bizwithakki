@@ -639,6 +639,202 @@
       border-radius: 8px;
     }
 
+    /* ===== CAREER PATHS ===== */
+    .career-section {
+      background: var(--black);
+      padding: 5.5rem 1.5rem;
+      border-top: 1px solid rgba(201,168,76,0.08);
+    }
+
+    .career-intro {
+      text-align: center;
+      color: #888;
+      font-size: 0.97rem;
+      max-width: 580px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    .career-intro strong { color: var(--white); }
+
+    /* Two path cards */
+    .career-paths {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto 3.5rem;
+    }
+
+    @media(max-width: 680px) { .career-paths { grid-template-columns: 1fr; } }
+
+    .career-path-card {
+      background: var(--dark2);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 14px;
+      padding: 2rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .career-path-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
+    .career-path-card--freelance::before { background: linear-gradient(90deg, var(--gold-dim), var(--gold-bright)); }
+    .career-path-card--job::before       { background: linear-gradient(90deg, #1d6fd4, #4fa3ff); }
+
+    .career-path-card:hover { transform: translateY(-5px); border-color: rgba(201,168,76,0.3); }
+
+    .cp-icon { font-size: 2rem; margin-bottom: 0.9rem; }
+    .cp-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      color: var(--white);
+    }
+    .cp-sub { font-size: 0.82rem; color: #666; margin-bottom: 1.5rem; }
+
+    .cp-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .cp-list li {
+      font-size: 0.88rem;
+      color: #aaa;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .cp-list li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.6rem;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .career-path-card--job .cp-list li::before { content: '✦'; color: #4fa3ff; }
+
+    /* Job cards row */
+    .career-jobs-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .career-jobs-label {
+      text-align: center;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 1.25rem;
+    }
+
+    .career-jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .job-card {
+      background: var(--dark2);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      transition: all 0.25s;
+    }
+
+    .job-card:hover { border-color: rgba(201,168,76,0.25); transform: translateY(-3px); }
+
+    .job-card-top {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .job-logo {
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      background: var(--dark3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--gold);
+      flex-shrink: 0;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .job-company { font-size: 0.72rem; color: #555; }
+    .job-title { font-size: 0.88rem; font-weight: 700; color: var(--white); line-height: 1.3; }
+
+    .job-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-top: 0.65rem;
+    }
+
+    .job-meta span {
+      font-size: 0.72rem;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .job-meta span b { color: #888; font-weight: 500; }
+
+    .job-badge {
+      display: inline-block;
+      margin-top: 0.65rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      background: rgba(79,163,255,0.1);
+      color: #4fa3ff;
+      border: 1px solid rgba(79,163,255,0.2);
+    }
+
+    .career-portal-note {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #555;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    .career-portal-note strong { color: var(--gold); font-style: normal; }
+
+    .career-tagline {
+      max-width: 680px;
+      margin: 2.5rem auto 0;
+      text-align: center;
+      padding: 1.5rem 2rem;
+      background: rgba(201,168,76,0.04);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 10px;
+      font-size: 0.97rem;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    .career-tagline strong { color: var(--gold-bright); }
+
     /* ===== BUNDLE ===== */
     .bundle-section {
       background: var(--black);
@@ -1345,6 +1541,13 @@
       .mt-item p { font-size: 0.9rem; }
       .mentor-quote { font-size: 0.92rem; margin: 1.25rem 0; }
 
+      /* Career Paths */
+      .career-section { padding: 4rem 1rem; }
+      .career-paths { grid-template-columns: 1fr; gap: 1rem; }
+      .career-jobs-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+      .job-title { font-size: 0.82rem; }
+      .career-tagline { padding: 1.25rem 1rem; font-size: 0.88rem; }
+
       /* FAQ */
       .faq-section { padding: 4rem 1rem; }
       .faq-q span:first-child { font-size: 0.9rem; }
@@ -1613,6 +1816,7 @@
   <div class="nav-links">
     <a href="#about">My Story</a>
     <a href="#how-it-works">How It Works</a>
+    <a href="#careers">Career Portal</a>
     <a href="#roi">ROI Calculator</a>
     <a href="#offer">The Offer</a>
     <a href="#faq">FAQ</a>
@@ -2157,6 +2361,128 @@
       <div class="skill-tag">LinkedIn Strategy</div>
       <div class="skill-tag">+ More Coming</div>
     </div>
+  </div>
+</section>
+
+<!-- ======= CAREER PATHS ======= -->
+<section class="career-section" id="careers">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="label">Two Paths. One Program.</div>
+      <div class="gold-bar"></div>
+      <h2>Don't Want to Freelance? We've Got You Covered Too.</h2>
+    </div>
+
+    <p class="career-intro reveal">
+      Most courses give you a certificate and wish you luck. We give you a skill — and then
+      <strong>two real ways to use it.</strong> Pick the path that fits your life.
+    </p>
+
+    <div class="career-paths reveal">
+
+      <div class="career-path-card career-path-card--freelance">
+        <div class="cp-icon">🚀</div>
+        <div class="cp-title">Build Your Own Income</div>
+        <div class="cp-sub">Freelance · Affiliate · Be Your Own Boss</div>
+        <ul class="cp-list">
+          <li>Take on clients and charge for your skill</li>
+          <li>Earn commissions through affiliate marketing</li>
+          <li>Work from anywhere, on your schedule</li>
+          <li>Income scales as you grow — no salary cap</li>
+          <li>₹50k–₹1L/month potential in 90 days</li>
+        </ul>
+      </div>
+
+      <div class="career-path-card career-path-card--job">
+        <div class="cp-icon">💼</div>
+        <div class="cp-title">Get a Skill-Based Job</div>
+        <div class="cp-sub">via BizGurukul Career Portal · Inside Your Dashboard</div>
+        <ul class="cp-list">
+          <li>Learn a specific in-demand skill</li>
+          <li>Browse real job listings inside your dashboard</li>
+          <li>Apply directly — no third-party job portals</li>
+          <li>Submit your resume to verified companies</li>
+          <li>0–2 years experience required — freshers welcome</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Live job cards -->
+    <div class="career-jobs-wrap reveal">
+      <div class="career-jobs-label">🔴 Live Openings on BizGurukul Career Portal</div>
+      <div class="career-jobs-grid">
+
+        <div class="job-card">
+          <div class="job-card-top">
+            <div class="job-logo">TP</div>
+            <div>
+              <div class="job-title">Digital Marketing Executive</div>
+              <div class="job-company">Teleperformance</div>
+            </div>
+          </div>
+          <div class="job-meta">
+            <span>📍 <b>Gurugram</b></span>
+            <span>🎒 <b>0–3 years</b></span>
+          </div>
+          <div class="job-badge">Hiring Now</div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-card-top">
+            <div class="job-logo">GC</div>
+            <div>
+              <div class="job-title">Graphic Designer</div>
+              <div class="job-company">Granth Creation</div>
+            </div>
+          </div>
+          <div class="job-meta">
+            <span>📍 <b>Ahmedabad</b></span>
+            <span>🎒 <b>0–2 years</b></span>
+          </div>
+          <div class="job-badge">Hiring Now</div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-card-top">
+            <div class="job-logo">GC</div>
+            <div>
+              <div class="job-title">UI UX Designer</div>
+              <div class="job-company">Granth Creations</div>
+            </div>
+          </div>
+          <div class="job-meta">
+            <span>📍 <b>Ahmedabad</b></span>
+            <span>🎒 <b>0–2 years</b></span>
+          </div>
+          <div class="job-badge">Hiring Now</div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-card-top">
+            <div class="job-logo">GC</div>
+            <div>
+              <div class="job-title">Business Dev. Executive</div>
+              <div class="job-company">Granth Creation</div>
+            </div>
+          </div>
+          <div class="job-meta">
+            <span>📍 <b>Ahmedabad</b></span>
+            <span>🎒 <b>0–2 years</b></span>
+          </div>
+          <div class="job-badge">Hiring Now</div>
+        </div>
+
+      </div>
+      <p class="career-portal-note">These are live listings. More jobs added every week. <strong>Access the full portal inside your dashboard after joining.</strong></p>
+    </div>
+
+    <div class="career-tagline reveal">
+      "Most courses give you a certificate. We give you a certificate, a skill, and a place to actually use it —
+      whether that's <strong>your own business or someone else's payroll.</strong>"
+    </div>
+
   </div>
 </section>
 
