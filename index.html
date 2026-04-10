@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akshay Potnis | Business Mentor — Earn ₹50k–₹1 Lakh in 90 Days</title>
-  <link rel="icon" type="image/png" href="favicon.png">
   <meta name="description" content="500+ students went from zero income to ₹50k–₹1 Lakh/month in 90 days. Akshay Potnis teaches real high-income skills with real results.">
 
   <!-- ===== OPEN GRAPH / SOCIAL PREVIEW ===== -->
@@ -888,15 +887,6 @@
     }
     .bonus-label { color: var(--gold-bright); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.5rem; }
     .bonus-item { color: #bbb; font-size: 0.88rem; margin-top: 0.4rem; }
-
-    /* Countdown */
-    .countdown-bar {
-      text-align: center; margin: 1.5rem 0 0.75rem;
-      padding: 1rem; background: rgba(224,48,48,0.1);
-      border: 1px solid rgba(224,48,48,0.3); border-radius: 8px;
-    }
-    .cd-label { color: var(--red); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-    .cd-timer { font-family: 'Courier New', monospace; font-size: 1.6rem; font-weight: 900; color: #fff; margin-top: 0.4rem; letter-spacing: 2px; }
 
     /* ===== SLOT FILL BAR ===== */
     .slot-bar-wrap {
@@ -2605,11 +2595,6 @@
         <div class="bonus-item">✦ We Send You 5 Ready Clients in 90 Days</div>
       </div>
 
-      <div class="countdown-bar">
-        <div class="cd-label">⏰ Next Batch Opens In:</div>
-        <div class="cd-timer" id="countdown">23:59:59</div>
-      </div>
-
       <!-- Slot fill bar -->
       <div class="slot-bar-wrap">
         <div class="slot-bar-header">
@@ -2868,77 +2853,46 @@
     }
     setTimeout(nudge, 5000 + Math.random() * 5000);
   })();
+  // ===== SLOTS — tied to the same weekly deadline, not visit time =====
   (function() {
-    const KEY = 'cd_end';
-    const DURATION = 24 * 60 * 60 * 1000; // 24 hours in ms
-    let endTime = parseInt(localStorage.getItem(KEY) || '0');
-    if (!endTime || endTime < Date.now()) {
-      endTime = Date.now() + DURATION;
-      localStorage.setItem(KEY, endTime);
-    }
-    const el = document.getElementById('countdown');
-    function tick() {
-      const diff = Math.max(0, endTime - Date.now());
-      const h = Math.floor(diff / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      el.textContent =
-        String(h).padStart(2,'0') + ':' +
-        String(m).padStart(2,'0') + ':' +
-        String(s).padStart(2,'0');
-      if (diff > 0) setTimeout(tick, 1000);
-      else { el.textContent = '00:00:00'; }
-    }
-    tick();
-  })();
-
-  // ===== SLOTS (decrement ~1 per 3hrs via localStorage) =====
-  (function() {
-    const SLOTS_KEY   = 'slots_val';
-    const SLOTS_TIME  = 'slots_ts';
     const TOTAL_SLOTS = 12;
-    const DECREMENT_INTERVAL_MS = 3 * 60 * 60 * 1000; // 3 hours
+    const START_SLOTS = 7; // visible slots at start of each week
 
-    let slots = parseInt(localStorage.getItem(SLOTS_KEY) || '0');
-    let lastTs = parseInt(localStorage.getItem(SLOTS_TIME) || '0');
-
-    // First visit — start at 7 (5 already taken)
-    if (!slots || slots < 1) {
-      slots = 7;
-      lastTs = Date.now();
-      localStorage.setItem(SLOTS_KEY, slots);
-      localStorage.setItem(SLOTS_TIME, lastTs);
-    } else {
-      // Decrement based on elapsed time since last visit
-      const elapsed = Date.now() - lastTs;
-      const decrements = Math.floor(elapsed / DECREMENT_INTERVAL_MS);
-      if (decrements > 0) {
-        slots = Math.max(1, slots - decrements);
-        localStorage.setItem(SLOTS_KEY, slots);
-        localStorage.setItem(SLOTS_TIME, Date.now());
-      }
+    // Get Monday midnight IST as the week anchor
+    function getWeekStart() {
+      const now = new Date();
+      const IST_OFFSET = 5.5 * 60 * 60 * 1000;
+      const nowIST = new Date(now.getTime() + IST_OFFSET);
+      const day = nowIST.getUTCDay();
+      const daysBack = day === 0 ? 6 : day - 1;
+      const monday = new Date(nowIST);
+      monday.setUTCDate(nowIST.getUTCDate() - daysBack);
+      monday.setUTCHours(0, 0, 0, 0);
+      return monday.getTime() - IST_OFFSET;
     }
 
-    const takenSlots  = TOTAL_SLOTS - slots;
-    const fillPct     = (takenSlots / TOTAL_SLOTS) * 100;
+    const weekStart   = getWeekStart();
+    const elapsed     = Date.now() - weekStart;
+    const totalWeekMs = 7 * 24 * 60 * 60 * 1000;
+    const weekPct     = Math.min(elapsed / totalWeekMs, 1);
+
+    // Slots go from 7 → 3 over the course of the week
+    const slots = Math.max(3, Math.round(START_SLOTS - (START_SLOTS - 3) * weekPct));
+
+    const takenSlots = TOTAL_SLOTS - slots;
+    const fillPct    = (takenSlots / TOTAL_SLOTS) * 100;
 
     const countEl = document.getElementById('slotsLeft');
     const fillEl  = document.getElementById('slotBarFill');
-    const noteEl  = document.getElementById('slotBarNote');
 
-    if (countEl) countEl.innerHTML = slots + ' <span>of ' + TOTAL_SLOTS + ' seats left</span>';
-    if (noteEl)  noteEl.textContent = 'Akshay reviews each application personally — limited to ' + TOTAL_SLOTS + ' per batch.';
+    if (countEl) {
+      countEl.innerHTML = slots + ' <span>of ' + TOTAL_SLOTS + ' seats left</span>';
+      countEl.style.color = slots <= 3 ? '#ff3b3b' : slots <= 5 ? '#f0a500' : '#f0c14b';
+    }
 
-    // Animate fill bar on load
     setTimeout(() => {
       if (fillEl) fillEl.style.width = fillPct + '%';
     }, 400);
-
-    // Urgency colour: red if ≤3, amber if ≤5
-    if (countEl) {
-      if (slots <= 3) countEl.style.color = '#ff3b3b';
-      else if (slots <= 5) countEl.style.color = '#f0a500';
-    }
   })();
 </script>
 
