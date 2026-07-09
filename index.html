@@ -503,12 +503,28 @@
     /* ---- Video qualification gate ---- */
     .vid-gate {
       position: relative;
-      background:
-        linear-gradient(rgba(10,8,6,0.88), rgba(10,8,6,0.94)),
-        url('https://img.youtube.com/vi/dZYNSggxXQ8/hqdefault.jpg') center/cover;
+      background: var(--ink-2);
       padding: clamp(1.6rem, 4vw, 2.6rem);
       text-align: center;
+      overflow: hidden;
     }
+    /* greyscale video still, faded */
+    .vid-gate::before {
+      content: ""; position: absolute; inset: 0;
+      background: url('https://img.youtube.com/vi/dZYNSggxXQ8/hqdefault.jpg') center/cover;
+      filter: grayscale(1) brightness(0.5) contrast(0.9) blur(2px);
+      opacity: 0.32;
+    }
+    /* soft grey mesh overlay on top of the still */
+    .vid-gate::after {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(55% 50% at 18% 18%, rgba(48,45,40,0.55), transparent 62%),
+        radial-gradient(50% 55% at 84% 28%, rgba(30,28,24,0.6), transparent 60%),
+        radial-gradient(75% 65% at 50% 95%, rgba(10,8,6,0.85), transparent 68%),
+        linear-gradient(rgba(10,8,6,0.55), rgba(10,8,6,0.7));
+    }
+    .vid-gate > * { position: relative; z-index: 2; }
     .vid-gate h3 { font-size: clamp(1.15rem, 2.4vw, 1.5rem); margin-bottom: 0.4rem; }
     .vid-gate h3 em { color: var(--gold-hi); font-style: normal; }
     .gate-sub { font-size: 0.88rem; color: var(--cream-dim); margin-bottom: 1.4rem; }
@@ -1074,10 +1090,9 @@
           <select id="gOcc" required>
             <option value="" disabled selected>I am a…</option>
             <option>Student</option>
-            <option>Job Holder</option>
             <option>Housewife</option>
+            <option>Job Holder</option>
             <option>Business Owner</option>
-            <option>Other</option>
           </select>
           <button type="submit" class="btn btn-gold">🔓 Unlock the Video</button>
           <p class="gate-error" id="gateError">Please enter a valid name and 10-digit number.</p>
@@ -1611,6 +1626,34 @@
     if (saved && saved.name) { unlockVideo(); personalizeWA(saved); }
   } catch (e) {}
 
+  function submitToGForm(name, phone, occ) {
+    let sink = document.getElementById('gformSink');
+    if (!sink) {
+      sink = document.createElement('iframe');
+      sink.name = 'gformSink'; sink.id = 'gformSink';
+      sink.style.display = 'none';
+      document.body.appendChild(sink);
+    }
+    const f = document.createElement('form');
+    f.action = 'https://docs.google.com/forms/d/e/' + GFORM.formId + '/formResponse';
+    f.method = 'POST';
+    f.target = 'gformSink';
+    f.style.display = 'none';
+    const add = (n, v) => {
+      const i = document.createElement('input');
+      i.type = 'hidden'; i.name = n; i.value = v;
+      f.appendChild(i);
+    };
+    add(GFORM.nameField, name);
+    add(GFORM.phoneField, phone);
+    add(GFORM.occField, occ);
+    add('fvv', '1');
+    add('pageHistory', '0');
+    document.body.appendChild(f);
+    f.submit();
+    setTimeout(() => f.remove(), 3000);
+  }
+
   document.getElementById('gateForm').addEventListener('submit', function (ev) {
     ev.preventDefault();
     const name = document.getElementById('gName').value.trim();
@@ -1620,17 +1663,8 @@
     if (name.length < 2 || phone.length < 10 || !occ) { err.style.display = 'block'; return; }
     err.style.display = 'none';
 
-    // Submit silently to Google Form (works cross-origin with no-cors)
-    if (true) {
-      const fd = new FormData();
-      fd.append(GFORM.nameField, name);
-      fd.append(GFORM.phoneField, phone);
-      fd.append(GFORM.occField, occ);
-      fetch('https://docs.google.com/forms/d/e/' + GFORM.formId + '/formResponse',
-            { method: 'POST', mode: 'no-cors', body: fd }).catch(() => {});
-    } else {
-      console.warn('Google Form entry IDs not configured yet - lead not saved.');
-    }
+    // Submit silently to Google Form via hidden iframe (most reliable method)
+    submitToGForm(name, phone, occ);
 
     const lead = { name: name, phone: phone, occ: occ };
     try { localStorage.setItem('bw_lead', JSON.stringify(lead)); } catch (e) {}
